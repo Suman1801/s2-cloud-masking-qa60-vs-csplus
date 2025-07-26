@@ -3,7 +3,7 @@
 // ----------------------------------------
 var s2 = ee.ImageCollection('COPERNICUS/S2_HARMONIZED');
 
-// Define Barasat point
+// Define AOI point/ Polygon 
 var geometry = ee.Geometry.Point([88.518, 22.719]);
 
 // Filter images
@@ -140,50 +140,4 @@ Export.image.toDrive({
   maxPixels: 1e13
 });
 
-// 2. Export QA60 Masked Image
-Export.image.toDrive({
-  image: imageMaskedQA60.visualize(rgbVis),
-  description: 'S2_QA60_Masked_Barasat',
-  folder: 'GEE_Exports',
-  fileNamePrefix: 'S2_QA60_Masked_Barasat_2025',
-  region: exportRegion,
-  scale: 10,
-  crs: 'EPSG:4326',
-  maxPixels: 1e13
-});
 
-// 3. Export CloudScore+ Masked Image
-Export.image.toDrive({
-  image: imageMaskedCS.visualize(rgbVis),
-  description: 'S2_CSPlus_Masked_Barasat',
-  folder: 'GEE_Exports',
-  fileNamePrefix: 'S2_CSPlus_Masked_Barasat_2025',
-  region: exportRegion,
-  scale: 10,
-  crs: 'EPSG:4326',
-  maxPixels: 1e13
-});
-
-// 4. Export QA60 Binary Cloud Mask
-Export.image.toDrive({
-  image: qa60_mask,
-  description: 'QA60_Binary_Mask_Barasat',
-  folder: 'GEE_Exports',
-  fileNamePrefix: 'QA60_Binary_Mask_Barasat_2025',
-  region: exportRegion,
-  scale: 10,
-  crs: 'EPSG:4326',
-  maxPixels: 1e13
-});
-
-// 5. Export CloudScore+ Binary Cloud Mask
-Export.image.toDrive({
-  image: csBinaryMask,
-  description: 'CSPlus_Binary_Mask_Barasat',
-  folder: 'GEE_Exports',
-  fileNamePrefix: 'CSPlus_Binary_Mask_Barasat_2025',
-  region: exportRegion,
-  scale: 10,
-  crs: 'EPSG:4326',
-  maxPixels: 1e13
-});
