@@ -44,9 +44,10 @@ We then:
   - These are masked (set to 0) to retain only clear pixels.
 
  **Source**:  
-- [ESA Sentinel-2 MSI Level-1C Product Definition](https://sentinel.esa.int/documents/247904/685211/Sentinel-2-MSIL1C-ProductDefinition.pdf)
-- [GEE Docs - Sentinel-2 QA60](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2)
 
+- [GEE Docs - Sentinel-2 QA60](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2)
+- Sentinel-2 MSI Level-1C Product Definition – [ESA](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi)
+- Google CloudScore+ – [GEE Dataset Docs](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED)
 ---
 
 ### 2. **CloudScore+ (Machine Learning)**
@@ -86,22 +87,12 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 
 ---
 
-## Exports (to Google Drive)
-
-- `S2_Original_Barasat_2025`
-- `S2_QA60_Masked_Barasat_2025`
-- `S2_CSPlus_Masked_Barasat_2025`
-- `QA60_Binary_Mask_Barasat_2025`
-- `CSPlus_Binary_Mask_Barasat_2025`
-
----
-
 ##  Important Notes
 
 - The **QA60 bitmask** tends to **overestimate clouds**, often masking shadows or water as clouds.
 - **CloudScore+** leverages deep learning to detect true clouds more precisely but may require tuning for thresholds (we used `0.2`).
 - This code can be modified to loop over time ranges or multiple AOIs.
-
+- This code is intended to be run in the [Google Earth Engine Code Editor](https://code.earthengine.google.com).
 ---
 
 ## 🧑‍💻 Author
@@ -110,6 +101,7 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 M.Sc. in Geography | Researcher | GEE & Python Developer  
 📧: sumanbhowmick768@gmail.com  
 
+Feel free to fork, adapt, and cite!
 ---
 
 ## ⚖️ License
