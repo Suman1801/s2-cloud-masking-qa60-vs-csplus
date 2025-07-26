@@ -110,7 +110,6 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 **Suman Bhowmick**  
 M.Sc. in Geography | Researcher | GEE & Python Developer  
 📧: sumanbhowmick768@gmail.com  
-🔗 [GitHub](https://github.com/Suman1801)
 
 ---
 
@@ -119,8 +118,4 @@ M.Sc. in Geography | Researcher | GEE & Python Developer
 This project is licensed under the MIT License. You are free to reuse, modify, and share with credit.
 
 ---
-
-## ✅ Suggested Citation
-
-Bhowmick, S. (2025). *Sentinel-2 Cloud Masking Comparison Using QA60 and CloudScore+ in Google Earth Engine*. GitHub Repository: [https://github.com/Suman1801](https://github.com/Suman1801)
 
