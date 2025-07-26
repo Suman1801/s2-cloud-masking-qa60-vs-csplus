@@ -45,8 +45,8 @@ We then:
 
  **Source**:  
 
-- [GEE Docs - Sentinel-2 QA60](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2)
-- Sentinel-2 MSI Level-1C Product Definition – [ESA](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi)
+- [GEE Docs - Sentinel-2 QA60]([https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_HARMONIZED))
+- Sentinel-2 MSI Level-1C Product Definition – [Copernicus] (https://sentinels.copernicus.eu/sentinel-data-access/sentinel-products/sentinel-2-data-products/collection-1-level-1c)
 - Google CloudScore+ – [GEE Dataset Docs](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED)
 ---
 
