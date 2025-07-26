@@ -3,8 +3,11 @@
 This project compares two cloud masking methods — **QA60** and **CloudScore+** — for Sentinel-2 Harmonized imagery using **Google Earth Engine (GEE)**. The objective is to demonstrate and quantify the performance differences of these masks over a selected Sentinel-2 image covering **Barasat, West Bengal, India**, for the time range **January–July 2025**.
 
 ---
+## 🖥️ Run This Script in Google Earth Engine
+🔗 [Click to open the code in GEE](https://code.earthengine.google.com/2d93a5204dcc48023e4118dc9a1bc763)
 
-## 🗺️ Objective
+---
+## Objective
 
 To perform **cloud masking** on a high-cloud Sentinel-2 image using:
 1. `QA60` Bitmask-based masking (official ESA method)
@@ -18,7 +21,7 @@ We then:
 
 ---
 
-## 📍 Study Area and Dataset
+## Study Area and Dataset
 
 - **Location**: Barasat, West Bengal  
 - **Coordinates**: `[88.518, 22.719]`
@@ -28,7 +31,7 @@ We then:
 
 ---
 
-## 🛠️ Cloud Masking Methodologies
+## Cloud Masking Methodologies
 
 ### 1. **QA60 Cloud Masking (Bitmask)**
 
@@ -40,7 +43,7 @@ We then:
   - Bitwise operations identify pixels flagged as cloud or cirrus.
   - These are masked (set to 0) to retain only clear pixels.
 
-📚 **Source**:  
+ **Source**:  
 - [ESA Sentinel-2 MSI Level-1C Product Definition](https://sentinel.esa.int/documents/247904/685211/Sentinel-2-MSIL1C-ProductDefinition.pdf)
 - [GEE Docs - Sentinel-2 QA60](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2)
 
@@ -55,12 +58,9 @@ We then:
   - Pixels with `cs >= 0.2` are considered **clear**.
   - This method uses spatial patterns, temporal history, and spectral data.
 
-📚 **Source**:  
-- [Google CloudScore+ Dataset Description](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED)
-
 ---
 
-## 🧮 Comparison of QA60 vs CloudScore+
+##  Comparison of QA60 vs CloudScore+
 
 | Criteria                | QA60                         | CloudScore+                    |
 |------------------------|------------------------------|--------------------------------|
@@ -74,7 +74,7 @@ We then:
 
 ---
 
-## 📊 Area-Based Comparison
+## Area-Based Comparison
 
 Pixel-wise statistics were computed:
 
@@ -86,7 +86,7 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 
 ---
 
-## 📤 Exports (to Google Drive)
+## Exports (to Google Drive)
 
 - `S2_Original_Barasat_2025`
 - `S2_QA60_Masked_Barasat_2025`
@@ -96,7 +96,7 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 
 ---
 
-## 📌 Important Notes
+##  Important Notes
 
 - The **QA60 bitmask** tends to **overestimate clouds**, often masking shadows or water as clouds.
 - **CloudScore+** leverages deep learning to detect true clouds more precisely but may require tuning for thresholds (we used `0.2`).
