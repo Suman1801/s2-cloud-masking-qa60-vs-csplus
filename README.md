@@ -57,8 +57,6 @@ We then:
 
 📚 **Source**:  
 - [Google CloudScore+ Dataset Description](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED)
-- Related Paper:
-- Martin, G., Kettig, T., Mandanici, E., Waldner, F., & Rüetschi, M. (2022). *Cloud Detection from Sentinel-2 Using Deep Learning*. **Remote Sensing**, 14(17), 4213. https://doi.org/10.3390/rs14174213
 
 ---
 
