@@ -1,6 +1,6 @@
-// ----------------------------------------
+
 // Load Sentinel-2 Harmonized
-// ----------------------------------------
+
 var s2 = ee.ImageCollection('COPERNICUS/S2_HARMONIZED');
 
 // Define AOI point/ Polygon 
@@ -65,15 +65,15 @@ Map.addLayer(imageMaskedCS, rgbVis, 'Cloud Score+ Masked Image');
 var csBinaryMask = imageWithCS.select('cs').gte(clearThresh).rename('CSPlus_Clear');
 Map.addLayer(csBinaryMask, {min: 0, max: 1, palette: ['red', 'green']}, 'CloudScore+ Binary Mask');
 
-// ----------------------------------------
+
 // Export Region and Pixel Area
-// ----------------------------------------
+
 var exportRegion = image.geometry().bounds();
 var pixelArea = ee.Image.pixelArea();
 
-// ----------------------------------------
+
 // Function to Compute % Clear Area
-// ----------------------------------------
+
 function computeStats(mask, label) {
   var cloudFreePixels = mask.eq(1);
   var totalPixels = mask.mask();
@@ -107,9 +107,9 @@ function computeStats(mask, label) {
 var qa60_percent = computeStats(qa60_mask, 'QA60');
 var csplus_percent = computeStats(csBinaryMask, 'CloudScore+');
 
-// ----------------------------------------
+
 // Chart for % Clear Area Comparison
-// ----------------------------------------
+
 var chart = ui.Chart.array.values(
   ee.Array([[qa60_percent], [csplus_percent]]),
   0,
@@ -125,9 +125,9 @@ var chart = ui.Chart.array.values(
 });
 print(chart);
 
-// ----------------------------------------
+
 // Export Images
-// ----------------------------------------
+
 // 1. Export Original Image
 Export.image.toDrive({
   image: image.visualize(rgbVis),
