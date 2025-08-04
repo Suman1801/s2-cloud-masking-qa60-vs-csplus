@@ -4,7 +4,7 @@ This project compares two cloud masking methods — **QA60** and **CloudScore+**
 
 ---
 ## 🖥️ Run This Script in Google Earth Engine
-🔗 [Click to open the code in GEE](https://code.earthengine.google.com/2d93a5204dcc48023e4118dc9a1bc763)
+🔗 [Click to open the code in GEE](https://code.earthengine.google.com/948123d7088c49c84d07faa5c4ec22f1)
 
 ---
 ## Objective
@@ -98,7 +98,7 @@ Using `ee.Image.pixelArea()` and `.reduceRegion()`.
 ## 🧑‍💻 Author
 
 **Suman Bhowmick**  
-M.Sc. in Geography | Researcher | GEE & Python Developer  
+M.Sc. in Geography  
 📧: sumanbhowmick768@gmail.com  
 
 Feel free to fork, adapt, and cite!
